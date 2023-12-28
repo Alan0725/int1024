@@ -1,0 +1,19 @@
+<!--
+-- @author 双料特工・钏钐钾
+-- @description 登录
+-- @createTime 2023-10-14
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="common/header::header(~{::title},~{},~{},~{})">
+    <title>小尾巴——宠物百科</title>
+</head>
+<body>
+<div th:fragment="content">
+    <h3>Error Page</h3>
+    <p th:text="${errorCode}"></p>
+    <p th:text="${errorMessage}"></p>
+    <pre th:text="${errorStackTrace}"></pre>
+</div>
+</body>
+</html>

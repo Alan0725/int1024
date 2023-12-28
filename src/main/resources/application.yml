@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: little_tail
+  security:
+    user:
+      name: admin
+      password: 123456
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://123.60.146.133:3306/little_tail?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: tail
+    password: 789321456
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      password: 123456
+      timeout: 3000
+      database: 0
+mybatis:
+  type-aliases-package: com.int1024.tail.model
+  mapper-locations: classpath:com/int1024/tail/repository/mapper/xml/*.xml
+  configuration:
+      map-underscore-to-camel-case: true

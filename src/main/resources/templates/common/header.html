@@ -1,0 +1,28 @@
+<!--
+-- @author 双料特工・钏钐钾
+-- @description 登录
+-- @createTime 2023-10-14
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:fragment="header(title,links,styles,script)">
+
+    <title th:replace="${title}">标题</title>
+
+    <link rel="icon" th:href="@{/image/favicon.ico}" type="image/x-icon"/>
+    <link rel="bookmark" th:href="@{/image/favicon.ico}" type="image/x-icon"/>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!--/* Per-page placeholder for additional links */-->
+    <th:block th:replace="${links}" />
+    <!--/* Per-page placeholder for additional styles */-->
+    <th:block th:replace="${styles}" />
+    <!--/* Per-page placeholder for additional script */-->
+    <th:block th:replace="${script}" />
+</head>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.int1024.tail.repository.mapper.UserMapper">
+
+    <insert id="insertUser" parameterType="com.int1024.tail.model.User" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        INSERT INTO `little_tail`.`user` (`username`, `password`, `nick_name`, `gender`, `phone_number`, `email`, `avatar`, `birthday`, `status`, `register_time`)
+        VALUES (#{user.username}, #{user.password}, #{user.nickName}, #{user.gender}, #{user.phoneNumber}, #{user.email}, #{user.avatar}, #{user.birthday}, #{user.status}, NOW());
+    </insert>
+
+    <select id="selectUserByUserNameOrPhoneNumber" resultType="com.int1024.tail.model.User">
+        SELECT * FROM little_tail.user WHERE username = #{userName} OR phone_number = #{phoneNumber}
+    </select>
+    <select id="selectUserById" resultType="com.int1024.tail.model.User">
+        SELECT * FROM little_tail.user WHERE id = #{userId}
+    </select>
+</mapper>
