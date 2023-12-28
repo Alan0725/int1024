@@ -43,7 +43,9 @@ public class UserCache {
         if (Objects.isNull(user)) {
            synchronized (getKey(userId)) {
                user = this.userMapper.selectUserById(userId);
-               setUser(user);
+               if (Objects.nonNull(user)) {
+                   setUser(user);
+               }
            }
         }
         return user;

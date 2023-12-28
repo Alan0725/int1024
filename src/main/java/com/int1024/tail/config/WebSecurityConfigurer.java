@@ -27,11 +27,11 @@ public class WebSecurityConfigurer {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((authorize) -> authorize
-                .requestMatchers("/login").permitAll()
+                .requestMatchers("/loginPage").permitAll()
                 .anyRequest().authenticated()
         );
         http.formLogin(httpSecurityFormLoginConfigurer -> {
-            httpSecurityFormLoginConfigurer.loginPage("/login").permitAll();
+            httpSecurityFormLoginConfigurer.loginPage("/loginPage").loginProcessingUrl("/login").permitAll();
         });
         return http.build();
     }
@@ -43,7 +43,6 @@ public class WebSecurityConfigurer {
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
         authenticationProvider.setUserDetailsService(userDetailsService);
         authenticationProvider.setPasswordEncoder(passwordEncoder);
-
         return new ProviderManager(authenticationProvider);
     }
 

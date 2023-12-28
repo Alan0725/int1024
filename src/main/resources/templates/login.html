@@ -5,12 +5,24 @@
 -->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:replace="common/header::header(~{::title},~{},~{},~{})">
+<head th:replace="~{common/header::header(~{::title},~{},~{},~{})}">
     <title>小尾巴——宠物百科</title>
 </head>
 <body>
     <div style="display: flex; justify-content: center">
         <h3>登录页</h3>
+        <br />
+        <form th:action="@{/login}" method="post">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30" style="font-size: 18px;">登录</button>
+        </form>
     </div>
 </body>
 </html>

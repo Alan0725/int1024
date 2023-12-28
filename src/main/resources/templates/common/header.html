@@ -6,9 +6,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org" lang="en">
-<head th:fragment="header(title,links,styles,script)">
+<head th:fragment="header(title,link,style,script)">
 
-    <title th:replace="${title}">标题</title>
+    <title th:replace="${title}">小尾巴——宠物百科</title>
 
     <link rel="icon" th:href="@{/image/favicon.ico}" type="image/x-icon"/>
     <link rel="bookmark" th:href="@{/image/favicon.ico}" type="image/x-icon"/>
@@ -19,9 +19,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
     <!--/* Per-page placeholder for additional links */-->
-    <th:block th:replace="${links}" />
+    <th:block th:replace="${link}" />
     <!--/* Per-page placeholder for additional styles */-->
-    <th:block th:replace="${styles}" />
+    <th:block th:replace="${style}" />
     <!--/* Per-page placeholder for additional script */-->
     <th:block th:replace="${script}" />
 </head>
